@@ -1,0 +1,20 @@
+version: "3"
+services:
+  aptmirror:
+    image: foxcris/docker-aptmirror:dev
+    environment:
+      - APTMIRROR_DEBIAN_STRETCH=false
+      - APTMIRROR_DEBIAN_BUSTER=true
+      - APTMIRROR_UBUNTU_BIONIC=false
+      - APTMIRROR_CUSTOMFILE=/etc/apt/custommirror.list
+      - APTMIRROR_CRON=* */6 * * *
+    volumes:
+      - ./custommirror.list:/etc/apt/custommirror.list:ro
+      - /home/user/aptmirror:/mnt/aptmirror:rw
+    restart: always
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge

@@ -1,0 +1,11 @@
+# Ubuntu Bionic Docker
+deb-amd64 https://download.docker.com/linux/ubuntu bionic stable
+
+# Debian Buster Docker
+deb-amd64 https://download.docker.com/linux/debian buster stable
+
+# Debian Stretch Docker
+deb-amd64 https://download.docker.com/linux/debian stretch stable
+
+# Ubuntu Visualstudio Code
+deb-amd64 https://packages.microsoft.com/repos/vscode stable main
